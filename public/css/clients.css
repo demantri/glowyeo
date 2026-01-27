@@ -1,0 +1,58 @@
+/* Background Putih Murni */
+.bg-white-pure {
+    background-color: #ffffff !important;
+    position: relative;
+}
+
+/* Tagline Pill sesuai desain terbaru */
+.tagline-pill-magenta {
+    display: inline-block;
+    background: #e91e63;
+    padding: 8px 35px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Container Logo */
+.client-logo-static {
+    background: #fdfdfd;
+    /* Warna putih sangat soft untuk kontras tipis */
+    border-radius: 20px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.client-img-display {
+    max-height: 60px;
+    width: auto;
+    filter: grayscale(0%);
+    /* Logo tetap berwarna sesuai desain */
+    transition: transform 0.3s ease;
+}
+
+/* Efek Interaktif Sederhana */
+.client-logo-static:hover {
+    background: #ffffff;
+    border-color: #eee;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+}
+
+/* Judul Portfolio di Client Section */
+.main-portfolio-title {
+    font-weight: 900;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    text-transform: uppercase;
+}
+
+/* Menghilangkan sisa background lama */
+#clients::before {
+    display: none !important;
+}

@@ -1,0 +1,145 @@
+.mr-3 {
+    margin-right: 3rem !important;
+}
+
+.ml-3 {
+    margin-left: 3rem !important;
+}
+
+.services-section {
+    position: relative;
+    padding: 120px 0;
+    overflow: hidden;
+    background-color: #fff;
+    background-image: url('../assets/bg_service_left.svg'),
+    url('../assets/bg_service_right.svg'),
+    /* Gradasi dengan kuning soft di tengah (50%) */
+    linear-gradient(135deg,
+        #ffffff 0%,
+        #FFFDE7 50%,
+        /* Kuning soft (Lemon Chiffon/Cream) */
+        #f8faff 100%);
+
+    /* Mengatur posisi gambar kiri bawah dan kanan sedikit turun */
+    background-position:
+        left bottom,
+        right 35%;
+
+    background-repeat: no-repeat;
+    /* Ukuran gambar disesuaikan agar tidak menutupi konten utama */
+    /* background-size: 40% auto, 40% auto, cover; */
+}
+
+/* Memastikan konten tetap berada di atas background */
+.services-section .container {
+    z-index: 2;
+}
+
+/* Judul Pusat (Blue Label) */
+.service-main-label {
+    background: #2F69FF;
+    color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(47, 105, 255, 0.4);
+    position: relative;
+    z-index: 5;
+}
+
+.service-main-label h2 {
+    font-weight: 900;
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.service-main-label p {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+/* Card Styling */
+
+.new-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Bulat Biru di Atas Kartu */
+.floating-icon-wrap {
+    width: 55px;
+    height: 55px;
+    background: #2F69FF;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 5px 15px rgba(47, 105, 255, 0.3);
+}
+
+.service-title-text {
+    font-size: 0.95rem;
+    color: #2F69FF;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Penyesuaian khusus untuk card agar tetap kotak sempurna (Square) */
+.new-service-card {
+    background: white;
+    border: 1.5px solid #2F69FF;
+    border-radius: 20px;
+    padding: 20px;
+    width: 350px;
+    height: 250px;
+    position: relative;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* List item dibuat rata kiri */
+.service-item-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: left;
+    /* Teks rata kiri */
+}
+
+.service-item-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 3px;
+}
+
+.service-item-list li i {
+    color: #FFD700;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* Ticker Position di bagian atas section services */
+.top-separator {
+    top: -40px;
+    bottom: auto;
+}
+
+@media (max-width: 991px) {
+    .service-main-label {
+        margin-bottom: 30px;
+    }
+
+    .service-grid-layout {
+        flex-direction: column;
+    }
+}

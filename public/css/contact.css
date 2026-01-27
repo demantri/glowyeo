@@ -1,0 +1,100 @@
+.contact-section {
+    /* background: linear-gradient(135deg, #e91e63 0%, #ff9800 100%); */
+    background: linear-gradient(100deg, #ff9800 0%, #e91e63 100%);
+    position: relative;
+    padding-bottom: 80px;
+}
+
+/* Main Card Styling */
+.main-contact-card {
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-title {
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: #2F69FF;
+    letter-spacing: -1px;
+}
+
+/* Tagline Pill */
+.pill-tag-magenta {
+    display: inline-block;
+    background: #e91e63;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+/* Form Styling */
+.custom-input {
+    background: #f4f4f4;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 0.9rem;
+}
+
+.custom-input:focus {
+    background: #eee;
+    box-shadow: none;
+}
+
+.btn-book-consultant {
+    background: #2F69FF;
+    color: white;
+    font-weight: 700;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-book-consultant:hover {
+    background: #1a4fd4;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(47, 105, 255, 0.3);
+}
+
+/* Garis Pemisah Vertikal */
+.vertical-divider {
+    position: absolute;
+    right: -15px;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: #ddd;
+}
+
+/* Map Styling */
+.map-wrapper {
+    border: 1px solid #eee;
+}
+
+@media (max-width: 991px) {
+    .contact-title {
+        font-size: 1.8rem;
+    }
+
+    .main-contact-card {
+        padding: 30px 20px !important;
+    }
+}
+
+.wa-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #212529;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.wa-link:hover {
+    color: #25D366;
+}

@@ -1,0 +1,115 @@
+.portfolio-with-bg {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    background-image: url('../assets/bg_hero.svg');
+    background-size: cover;
+    padding-bottom: 100px !important;
+}
+
+/* Judul Styling */
+.main-portfolio-title {
+    font-weight: 900;
+    font-size: 3.5rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.tagline-pill {
+    display: inline-block;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    padding: 6px 25px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Splide Slide Effects */
+#portfolio-splide .splide__slide {
+    transform: scale(0.85);
+    opacity: 0.6;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: blur(2px);
+}
+
+#portfolio-splide .splide__slide.is-active {
+    transform: scale(1.2);
+    /* Gambar Tengah Jauh Lebih Besar */
+    opacity: 1;
+    z-index: 5;
+    filter: blur(0);
+}
+
+.portfolio-card {
+    border-radius: 30px;
+    overflow: hidden;
+    background: #fff;
+    height: 450px;
+    /* Tinggi disesuaikan agar dominan */
+}
+
+.portfolio-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigasi Bulat (Custom Arrows) */
+.custom-arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 10;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    /* Posisi di antara gambar samping */
+    pointer-events: none;
+}
+
+.arrow-circle {
+    width: 60px;
+    height: 60px;
+    background: #FFD700 !important;
+    /* Warna Kuning Terang */
+    border: none !important;
+    border-radius: 50%;
+    color: #000 !important;
+    font-size: 1.5rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+    pointer-events: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.arrow-circle:hover {
+    background: #fff !important;
+    transform: scale(1.1);
+}
+
+/* Hapus pagination default jika ingin bersih sesuai gambar */
+.splide__pagination {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .main-portfolio-title {
+        font-size: 2rem;
+    }
+
+    .portfolio-card {
+        height: 300px;
+    }
+
+    .arrow-circle {
+        width: 45px;
+        height: 45px;
+    }
+}

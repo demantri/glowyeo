@@ -1,0 +1,115 @@
+#why-choose-us {
+    /* PASTIKAN position: relative AKTIF agar pita bisa menempel di bawah section ini */
+    position: relative;
+
+    /* Hilangkan overflow: hidden jika pita terpotong, atau gunakan pada kontainer luar */
+    overflow: visible;
+
+    background-color: #fff;
+    background-image: url('../assets/why_choose_us.svg');
+    background-size: cover;
+    padding-bottom: 120px !important;
+    /* Ruang ekstra untuk pita */
+}
+
+.main-glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.section-title-alt {
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: #2F69FF;
+}
+
+/* Gallery Styling */
+.main-gallery-img {
+    height: 420px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.side-gallery-img {
+    height: 202px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Gradient Buttons */
+.feat-btn {
+    padding: 15px 25px;
+    border-radius: 15px;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+.feat-btn:hover {
+    transform: scale(1.03);
+}
+
+.btn-orange-grad {
+    background: linear-gradient(to right, #e91e63, #ff9800);
+}
+
+.btn-blue-grad {
+    background: linear-gradient(to right, #8bc34a, #2F69FF);
+}
+
+.btn-magenta-grad {
+    background: linear-gradient(to right, #3f51b5, #e91e63);
+}
+
+.btn-pink-grad {
+    background: linear-gradient(to right, #ff9800, #e91e63);
+}
+
+.glowy-ticker-separator {
+    position: absolute;
+    /* Gunakan bottom dengan nilai yang lebih presisi */
+    /* bottom: -40px; */
+    left: -7%;
+    width: 110%;
+    /* transform: rotate(-3deg); */
+    z-index: 100;
+    /* Pastikan z-index sangat tinggi */
+    pointer-events: none;
+}
+
+.ticker-png {
+    width: 100%;
+    height: auto;
+    /* Memastikan gambar dipaksa tampil jika ada masalah render */
+    display: block;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* Penyesuaian untuk Section Services di bawahnya */
+#services {
+    padding-top: 200px !important;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    .glowy-ticker-separator {
+        bottom: -20px;
+        transform: rotate(-2deg);
+    }
+}
+
+@media (max-width: 991px) {
+    .main-gallery-img {
+        height: 300px;
+    }
+
+    .side-gallery-img {
+        height: 142px;
+    }
+}

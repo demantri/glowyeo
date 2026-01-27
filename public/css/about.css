@@ -1,0 +1,61 @@
+.about-section {
+    background-color: #fff;
+    background-image: url('../assets/pattern.svg');
+    background-size: cover;
+    padding-top: 150px !important;
+    padding-bottom: 6rem !important;
+}
+
+.about-main-card {
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 2;
+}
+
+.about-title {
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+/* Memastikan kotak Visi & Misi memiliki tinggi yang sama dengan foto */
+.vision-box,
+.mission-box {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.vision-box {
+    background: linear-gradient(135deg, #2F69FF 0%, #1a4fd4 100%);
+}
+
+.mission-box {
+    background: linear-gradient(135deg, #E91E63 0%, #c2185b 100%);
+}
+
+.mission-num {
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+    .about-title {
+        font-size: 1.8rem;
+    }
+
+    .about-image-wrapper {
+        height: 250px;
+    }
+
+    /* Atur tinggi foto di mobile */
+}
