@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
+use App\Models\WhyChooseUs;
 use Illuminate\Http\Request;
 use App\Models\ServiceCategory;
 use Illuminate\Support\Facades\DB;
@@ -28,11 +30,21 @@ class EventController extends Controller
             ->orderBy('order')
             ->get();
 
+        $about = AboutUs::with(['missions' => function ($q) {
+            $q->orderBy('position');
+        }])->first();
+
+        $whyChoose = WhyChooseUs::with(['items' => function ($q) {
+            $q->orderBy('position');
+        }])->first();
+
         return view('new_index', compact(
             'portfolio',
             'clients',
             'settings',
             'services',
+            'about',
+            'whyChoose',
         ));
     }
 }

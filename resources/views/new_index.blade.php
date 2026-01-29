@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    
+
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
@@ -123,9 +123,10 @@
                     <div class="col-lg-8">
                         <div class="about-desc">
                             <p class="text-dark m-0">
-                                <strong>GLOWY EO offers comprehensive, high-standard MICE services blending strategy and
+                                {{-- <strong>GLOWY EO offers comprehensive, high-standard MICE services blending strategy and
                                     creativity.</strong>
-                                As a trusted partner, we bring energy, passion, and a premium vision to every event.
+                                As a trusted partner, we bring energy, passion, and a premium vision to every event. --}}
+                                {!! $about->description !!}
                             </p>
                         </div>
                     </div>
@@ -134,7 +135,9 @@
                 <div class="row g-4 align-items-stretch">
                     <div class="col-lg-4">
                         <div class="about-image-wrapper h-100">
-                            <img src="{{ asset('events/sample.jpg') }}" alt="Professional Worker"
+                            {{-- <img src="{{ asset('events/sample.jpg') }}" alt="Professional Worker"
+                                class="img-fluid rounded-4 shadow-sm h-100 w-100" style="object-fit: cover;"> --}}
+                            <img src="{{ env('APP_ADMIN') . '/storage/' . $about->image }}" alt="About Image"
                                 class="img-fluid rounded-4 shadow-sm h-100 w-100" style="object-fit: cover;">
                         </div>
                     </div>
@@ -146,8 +149,9 @@
                                 <h5 class="fw-bold m-0">Our Vision</h5>
                             </div>
                             <p class="small opacity-90 m-0">
-                                To become a <span class="fw-bold">trusted and forward thinking</span> event organizer
-                                that consistently delivers professional, creative, and impactful event experiences.
+                                {{-- To become a <span class="fw-bold">trusted and forward thinking</span> event organizer
+                                that consistently delivers professional, creative, and impactful event experiences. --}}
+                                {!! $about->vision_content !!}
                             </p>
                         </div>
                     </div>
@@ -159,7 +163,7 @@
                                 <h5 class="fw-bold m-0">Our Mission</h5>
                             </div>
                             <div class="mission-steps">
-                                <div class="mission-item d-flex gap-3 mb-3">
+                                {{-- <div class="mission-item d-flex gap-3 mb-3">
                                     <span class="mission-num">1</span>
                                     <p class="small m-0">Collaborate closely with clients to transform ideas into
                                         impactful events.</p>
@@ -173,7 +177,15 @@
                                     <span class="mission-num">3</span>
                                     <p class="small m-0">Provide customized solutions with a strong fighting spirit and
                                         creative excellence.</p>
-                                </div>
+                                </div> --}}
+                                @foreach ($about->missions as $index => $mission)
+                                    <div class="mission-item d-flex gap-3">
+                                        <span class="mission-num">{{ $index + 1 }}</span>
+                                        <p class="small m-0">
+                                            {!! $mission->content !!}
+                                        </p>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -188,18 +200,24 @@
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-7">
                         <div class="row g-3">
-                            <div class="col-8">
-                                <img src="{{ asset('events/sample.jpg') }}" alt="Event Setup"
-                                    class="img-fluid rounded-4 main-gallery-img">
+                            <div class="col-sm-6">
+                                {{-- <img src="{{ asset('events/sample.jpg') }}" alt="Event Setup"
+                                    class="img-fluid rounded-4 main-gallery-img"> --}}
+                                <img src="{{ env('APP_ADMIN') . '/storage/' . $whyChoose->image_main }}"
+                                    alt="Event Setup" class="img-fluid rounded-4 main-gallery-img">
                             </div>
-                            <div class="col-4">
+                            <div class="col-sm-6">
                                 <div class="row g-3">
                                     <div class="col-12">
-                                        <img src="{{ asset('events/sample.jpg') }}" alt="Meeting"
-                                            class="img-fluid rounded-4 side-gallery-img">
+                                        {{-- <img src="{{ asset('events/sample.jpg') }}" alt="Meeting"
+                                            class="img-fluid rounded-4 side-gallery-img"> --}}
+                                        <img src="{{ env('APP_ADMIN') . '/storage/' . $whyChoose->image_top }}"
+                                            alt="Meeting" class="img-fluid rounded-4 side-gallery-img">
                                     </div>
                                     <div class="col-12">
-                                        <img src="{{ asset('events/sample.jpg') }}" alt="Production"
+                                        {{-- <img src="{{ asset('events/sample.jpg') }}" alt="Production"
+                                            class="img-fluid rounded-4 side-gallery-img"> --}}
+                                        <img src="{{ env('APP_ADMIN') . '/storage/' . $whyChoose->image_bottom }}" alt="Production"
                                             class="img-fluid rounded-4 side-gallery-img">
                                     </div>
                                 </div>
@@ -213,12 +231,13 @@
                             <h2 class="section-title-alt m-0 text-blue">WHY <span class="text-yellow">CHOOSE US</span>
                             </h2>
                         </div>
-                        <p class="text-muted small mb-4">
-                            From concept development to on-site execution, GLOWY EO provides comprehensive, end-to-end
-                            event management services.
+                        <p class="text-muted small mb-3">
+                            {{-- From concept development to on-site execution, GLOWY EO provides comprehensive, end-to-end
+                            event management services. --}}
+                            {!! $whyChoose->description !!}
                         </p>
 
-                        <div class="feature-buttons-list d-grid gap-3">
+                        {{-- <div class="feature-buttons-list d-grid gap-3">
                             <div class="feat-btn btn-orange-grad">
                                 <i class="bi bi-shield-fill-check me-2"></i> Trust & Professionalism
                             </div>
@@ -231,6 +250,15 @@
                             <div class="feat-btn btn-pink-grad">
                                 <i class="bi bi-fire me-2"></i> Strong Fighting Spirit
                             </div>
+                        </div> --}}
+
+                        <div class="feature-buttons-list d-grid gap-3">
+                            @foreach ($whyChoose->items as $item)
+                                <div class="feat-btn {{ $item->gradient_class }}">
+                                    <i class="{{ $item->icon }} me-2"></i>
+                                    {{ $item->title }}
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

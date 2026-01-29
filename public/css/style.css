@@ -40,12 +40,12 @@ section {
    TYPOGRAPHY
 ===================================================== */
 .homepage-title h1 {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
     font-weight: 400 !important;
 }
 
 .homepage-title {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
     font-weight: 200 !important;
     font-size: clamp(2.2rem, 6vw, 3.5rem) !important;
     line-height: 1.1;
@@ -159,7 +159,7 @@ section h2 {
 }
 
 .stat-item h2 {
-    color: #2F69FF;
+    color: #2f69ff;
     font-weight: 800;
     font-size: clamp(1.2rem, 4vw, 2.2rem);
     line-height: 1;
@@ -181,7 +181,7 @@ section h2 {
     padding-top: 100px;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .hero-stats-bar {
         bottom: -80px;
         padding: 15px 5px;
@@ -194,7 +194,7 @@ section h2 {
     .stat-item small {
         font-size: 0.6rem;
     }
-}
+} */
 
 .el-1 {
     top: 25%;
@@ -214,7 +214,6 @@ section h2 {
 }
 
 @keyframes floatAnim {
-
     0%,
     100% {
         transform: translateY(0);
@@ -227,9 +226,14 @@ section h2 {
 
 .hero-video-bg {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 0;
+    /* Mencegah video sendiri yang memicu scrollbar aneh */
+    pointer-events: none;
 }
 
 .hero-video-overlay {
@@ -240,7 +244,11 @@ section h2 {
 }
 
 .hero-overlay {
-    background: linear-gradient(to right, rgba(0, 0, 0, .45), rgba(0, 0, 0, .1));
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.1)
+    );
     min-height: 100vh;
 }
 
@@ -252,7 +260,7 @@ section h2 {
 }
 
 .hero-content p {
-    opacity: .9;
+    opacity: 0.9;
 }
 
 .plus-yellow {
@@ -260,15 +268,15 @@ section h2 {
 }
 
 .hero-content .d-flex.justify-content-center.gap-3 {
-    background: rgba(255, 255, 255, .15);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 12px;
     border-radius: 100px;
-    border: 1px solid rgba(255, 255, 255, .2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     display: inline-flex !important;
     margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* =====================================================
@@ -281,14 +289,14 @@ section h2 {
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
 }
 
 .btn-primary-glow {
-    background: rgba(47, 105, 255, .8);
+    background: rgba(47, 105, 255, 0.8);
     color: white;
-    border: 1px solid rgba(255, 255, 255, .3);
-    box-shadow: 0 8px 32px rgba(47, 105, 255, .3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(47, 105, 255, 0.3);
 }
 
 .btn-primary-glow:hover {
@@ -297,13 +305,13 @@ section h2 {
 }
 
 .btn-white-glass {
-    background: rgba(255, 255, 255, .2);
+    background: rgba(255, 255, 255, 0.2);
     color: white;
-    border: 1px solid rgba(255, 255, 255, .4);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .btn-white-glass:hover {
-    background: rgba(255, 255, 255, .35);
+    background: rgba(255, 255, 255, 0.35);
 }
 
 /* =====================================================
@@ -311,7 +319,7 @@ section h2 {
 ===================================================== */
 .hero-stats-bar {
     position: absolute;
-    bottom: -50px;
+    bottom: -60px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -320,7 +328,7 @@ section h2 {
     padding: 20px 10px;
     border-radius: 20px;
     z-index: 10;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* =====================================================
@@ -333,7 +341,7 @@ section h2 {
 /* ABOUT */
 .about-section {
     background-color: #fff;
-    background-image: url('../assets/pattern.svg');
+    background-image: url("../assets/pattern.svg");
     background-size: cover;
     padding-top: 150px !important;
     padding-bottom: 6rem !important;
@@ -365,7 +373,7 @@ section h2 {
 }
 
 .mission-box {
-    background: linear-gradient(135deg, #E91E63 0%, #c2185b 100%);
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
 }
 
 .mission-num {
@@ -402,7 +410,7 @@ section h2 {
     overflow: visible;
 
     background-color: #fff;
-    background-image: url('../assets/why_choose_us.svg');
+    background-image: url("../assets/why_choose_us.svg");
     background-size: cover;
     padding-bottom: 120px !important;
     /* Ruang ekstra untuk pita */
@@ -468,10 +476,10 @@ section h2 {
 .glowy-ticker-separator {
     position: absolute;
     /* Gunakan bottom dengan nilai yang lebih presisi */
-    /* bottom: -40px; */
-    left: -7%;
-    width: 110%;
-    /* transform: rotate(-3deg); */
+    bottom: -175px !important;
+    left: -0%;
+    width: 100%;
+    transform: rotate(-1deg);
     z-index: 100;
     /* Pastikan z-index sangat tinggi */
     pointer-events: none;
@@ -501,6 +509,10 @@ section h2 {
 }
 
 @media (max-width: 991px) {
+    .glowy-ticker-separator {
+        bottom: -86px !important;
+    }
+
     .main-gallery-img {
         height: 300px;
     }
@@ -524,14 +536,16 @@ section h2 {
     padding: 120px 0;
     overflow: hidden;
     background-color: #fff;
-    background-image: url('../assets/bg_service_left.svg'),
-        url('../assets/bg_service_right.svg'),
+    background-image:
+        url("../assets/bg_service_left.svg"),
+        url("../assets/bg_service_right.svg"),
         /* Gradasi dengan kuning soft di tengah (50%) */
-        linear-gradient(135deg,
-            #ffffff 0%,
-            #FFFDE7 50%,
-            /* Kuning soft (Lemon Chiffon/Cream) */
-            #f8faff 100%);
+        linear-gradient(
+                135deg,
+                #ffffff 0%,
+                #fffde7 50%,
+                /* Kuning soft (Lemon Chiffon/Cream) */ #f8faff 100%
+            );
 
     /* Mengatur posisi gambar kiri bawah dan kanan sedikit turun */
     background-position:
@@ -661,7 +675,7 @@ section h2 {
     position: relative;
     overflow: hidden;
     background-color: #fff;
-    background-image: url('../assets/bg_hero.svg');
+    background-image: url("../assets/bg_hero.svg");
     background-size: cover;
     padding-bottom: 100px !important;
 }
@@ -758,7 +772,7 @@ section h2 {
     display: none;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .main-portfolio-title {
         font-size: 2rem;
     }
@@ -771,7 +785,7 @@ section h2 {
         width: 45px;
         height: 45px;
     }
-}
+} */
 
 /* CLIENT */
 /* Background Putih Murni */
@@ -911,7 +925,7 @@ section h2 {
     border: 1px solid #eee;
 }
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
     .contact-title {
         font-size: 1.8rem;
     }
@@ -919,7 +933,7 @@ section h2 {
     .main-contact-card {
         padding: 30px 20px !important;
     }
-}
+} */
 
 .wa-link {
     display: inline-flex;
@@ -932,7 +946,7 @@ section h2 {
 }
 
 .wa-link:hover {
-    color: #25D366;
+    color: #25d366;
 }
 
 /* FOOTER */
@@ -1002,8 +1016,267 @@ footer.bg-white {
     color: var(--royal-purple) !important;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .footer-logo img {
         margin: 0 auto;
+    }
+} */
+
+/* =====================================================
+   FILE: style.css (Updated for Responsive Design)
+   PANDUAN: Bagian bawah berisi Media Queries untuk Tab & Mobile
+===================================================== */
+
+/* --- TETAPKAN SEMUA KODE ASLI ANDA DI SINI --- */
+/* (Saya sudah menyertakan base style Anda di bagian awal file ini) */
+
+/* ... (Kode Font, Root, Base, Typography, Hero, dll tetap sama) ... */
+
+/* =====================================================
+   1. LARGE TABLET & SMALL LAPTOP (992px - 1199px)
+   (Versi Website dengan ukuran lebih ringkas)
+===================================================== */
+@media (max-width: 1440px) {
+    .hero-content {
+        max-width: 900px;
+    }
+
+    .about-title {
+        font-size: 2.2rem;
+    }
+
+    /* Menyesuaikan kartu agar tidak terlalu lebar */
+    .new-service-card {
+        width: 300px;
+        height: 280px;
+    }
+
+    .glowy-ticker-separator {
+        bottom: -145px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .glowy-ticker-separator {
+        bottom: -107px !important;
+    }
+}
+
+/* =====================================================
+   2. MEDIUM TABLET (768px - 991px)
+   (Versi Tab seperti iPad atau Tablet Android)
+===================================================== */
+@media (max-width: 991px) {
+    section {
+        padding: 80px 0;
+    }
+
+    section h2 {
+        font-size: 42px !important;
+    }
+
+    .about-section {
+        padding-top: 120px !important;
+    }
+
+    .about-image-wrapper {
+        height: 350px;
+        margin-bottom: 30px;
+    }
+
+    /* Galeri "Why Choose Us" jadi bertumpuk rapi */
+    .main-gallery-img {
+        height: 300px;
+        margin-bottom: 15px;
+    }
+    .side-gallery-img {
+        height: 200px;
+        margin-bottom: 15px;
+    }
+
+    /* Grid Service berubah dari baris ke kolom */
+    .service-grid-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .mr-3,
+    .ml-3 {
+        margin: 0 !important;
+    }
+
+    .new-service-card {
+        width: 90%;
+        max-width: 450px;
+        height: auto;
+        min-height: 220px;
+    }
+
+    /* Portfolio Adjustment */
+    .main-portfolio-title {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-card {
+        height: 350px;
+    }
+
+    /* Contact Us - Menghilangkan garis vertikal pemisah */
+    .vertical-divider {
+        display: none;
+    }
+
+    .glowy-ticker-separator {
+        bottom: -90px !important;
+    }
+}
+
+/* =====================================================
+   3. MOBILE VERSION (Di bawah 768px)
+   (Penyesuaian khusus untuk Handphone)
+===================================================== */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    section h2 {
+        font-size: 32px !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* Judul Utama Hero lebih kecil agar tidak pecah */
+    .homepage-title {
+        font-size: 2.2rem !important;
+    }
+
+    /* Tombol Hero di mobile jadi susun ke bawah */
+    .hero-content .d-flex.justify-content-center.gap-3 {
+        /* flex-direction: column; */
+        background: none;
+        backdrop-filter: none;
+        border: none;
+        width: 75%;
+        padding: 0;
+    }
+
+    .hero-btn {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    /* Stats Bar (Pindah dari melayang menjadi bagian dari alur halaman) */
+    .hero-stats-bar {
+        /* position: relative; */
+        /* bottom: 0;
+        left: 0;
+        transform: none;
+        width: 95%;
+        margin: -50px auto 30px;
+        padding: 10px; */
+        position: absolute;
+        bottom: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 1100px;
+        background: white;
+        padding: 20px 10px;
+        border-radius: 20px;
+        z-index: 10;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    /* Service Card di Mobile jadi Full Width */
+    .new-service-card {
+        width: 100%;
+        padding: 25px 15px;
+    }
+
+    /* Portfolio Mobile (Slide efek diperkecil agar tidak menutupi layar) */
+    .portfolio-card {
+        height: 280px;
+        border-radius: 20px;
+    }
+
+    #portfolio-splide .splide__slide {
+        transform: scale(0.9) !important;
+        opacity: 0.7;
+    }
+
+    #portfolio-splide .splide__slide.is-active {
+        transform: scale(1) !important;
+        opacity: 1;
+    }
+
+    /* Panah Navigasi diperkecil */
+    .arrow-circle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    /* Pita/Ticker di Mobile dibuat lurus agar tidak ada gap putih */
+    .glowy-ticker-separator {
+        bottom: -82px !important;
+        transform: rotate(0deg);
+    }
+
+    /* Footer Center Alignment */
+    .footer-logo,
+    .footer-nav-col,
+    .social-icons-wrap {
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .stat-item h2 {
+        font-size: 24px !important;
+    }
+
+    .stat-item small {
+        font-size: 8px !important;
+    }
+
+    .homepage-title {
+        font-size: 1.5rem !important;
+    }
+
+    .glowy-ticker-separator {
+        bottom: -45px !important;
+        transform: rotate(0deg);
+    }
+
+    #services {
+        padding-top: 120px !important;
+    }
+
+    /* Mengecilkan ukuran font dan padding pada semua jenis button */
+    .hero-btn,
+    .feat-btn,
+    .btn-book-consultant,
+    .btn-glowy {
+        font-size: 13px !important; /* Ukuran teks lebih kecil */
+        padding: 10px 15px !important; /* Padding lebih ramping */
+        gap: 6px !important; /* Jarak antara icon dan teks dipersempit */
+        letter-spacing: 0.5px !important; /* Spasi antar huruf agar tidak rapat */
+    }
+
+    /* Memastikan icon di dalam button ikut mengecil */
+    .hero-btn i,
+    .feat-btn i {
+        font-size: 14px !important;
     }
 }
