@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/style.css?v=1.0.2') }}">
 </head>
 
 <body>
@@ -51,10 +52,22 @@
 
         <div class="container position-relative" style="z-index: 2;">
             <div class="hero-content mx-auto w-100" data-aos="zoom-in">
-                <h1 class="text-white mb-5 homepage-title">
+                {{-- <h1 class="text-white mb-5 homepage-title">
                     Make Your Dream Event Come True with an <span class="text-highlight">Easiest Way, Efficient </span>
                     <span class="text-highlight">and Memorable</span>
-                </h1>
+                </h1> --}}
+
+                <div class="hero-3d-wrapper mx-auto">
+                    <div class="hero-3d-layer">
+                        <img src="{{ asset('assets/bintang3.svg') }}" alt="3D Icon">
+                    </div>
+
+                    <h1 class="hero-hover-title">
+                        Make Your Dream Event Come True with an
+                        <span class="text-highlight">Easiest Way, Efficient</span>
+                        <span class="text-highlight">and Memorable</span>
+                    </h1>
+                </div>
 
                 <div class="d-flex justify-content-center gap-3 mt-4">
                     <a href="#about" class="hero-btn btn-primary-glow">
@@ -217,8 +230,8 @@
                                     <div class="col-12">
                                         {{-- <img src="{{ asset('events/sample.jpg') }}" alt="Production"
                                             class="img-fluid rounded-4 side-gallery-img"> --}}
-                                        <img src="{{ env('APP_ADMIN') . '/storage/' . $whyChoose->image_bottom }}" alt="Production"
-                                            class="img-fluid rounded-4 side-gallery-img">
+                                        <img src="{{ env('APP_ADMIN') . '/storage/' . $whyChoose->image_bottom }}"
+                                            alt="Production" class="img-fluid rounded-4 side-gallery-img">
                                     </div>
                                 </div>
                             </div>

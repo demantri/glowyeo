@@ -135,6 +135,79 @@ section h2 {
     width: 100%;
 }
 
+/* ===============================
+   HERO 3D HOVER (COMPATIBLE FIX)
+================================ */
+
+/* PASTIKAN OVERLAY & VIDEO TEMBUS MOUSE */
+.hero-video-bg,
+.hero-video-overlay {
+    pointer-events: none;
+}
+
+/* WRAPPER */
+.hero-3d-wrapper {
+    position: relative;
+    /* width: 320px; */
+    /* max-width: 85vw; */
+    margin: 0 auto 40px;
+    cursor: pointer;
+    z-index: 3;
+    max-height: 460px !important;
+    margin-bottom: 5rem !important;
+    /* di atas overlay */
+}
+
+/* ICON */
+.hero-3d-layer {
+    position: relative;
+    z-index: 2;
+    animation: floatAnim 6s ease-in-out infinite;
+}
+
+.hero-3d-layer img {
+    /* width: 100%; */
+    /* display: block; */
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
+    transition: transform .5s ease, opacity .5s ease;
+}
+
+/* TITLE */
+.hero-hover-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+
+    opacity: 0;
+    transition: all .5s ease;
+
+    text-align: center;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+
+    pointer-events: none;
+}
+
+/* HOVER TRIGGER */
+.hero-3d-wrapper:hover .hero-hover-title {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.hero-3d-wrapper:hover .hero-3d-layer img {
+    transform: scale(0.85);
+    opacity: 0;
+}
+
 /* =====================================================
    HERO (VIDEO + CONTENT + BUTTON)
 ===================================================== */
@@ -214,6 +287,7 @@ section h2 {
 }
 
 @keyframes floatAnim {
+
     0%,
     100% {
         transform: translateY(0);
@@ -244,11 +318,9 @@ section h2 {
 }
 
 .hero-overlay {
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.45),
-        rgba(0, 0, 0, 0.1)
-    );
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.1));
     min-height: 100vh;
 }
 
@@ -540,12 +612,11 @@ section h2 {
         url("../assets/bg_service_left.svg"),
         url("../assets/bg_service_right.svg"),
         /* Gradasi dengan kuning soft di tengah (50%) */
-        linear-gradient(
-                135deg,
-                #ffffff 0%,
-                #fffde7 50%,
-                /* Kuning soft (Lemon Chiffon/Cream) */ #f8faff 100%
-            );
+        linear-gradient(135deg,
+            #ffffff 0%,
+            #fffde7 50%,
+            /* Kuning soft (Lemon Chiffon/Cream) */
+            #f8faff 100%);
 
     /* Mengatur posisi gambar kiri bawah dan kanan sedikit turun */
     background-position:
@@ -1089,6 +1160,7 @@ footer.bg-white {
         height: 300px;
         margin-bottom: 15px;
     }
+
     .side-gallery-img {
         height: 200px;
         margin-bottom: 15px;
@@ -1268,10 +1340,14 @@ footer.bg-white {
     .feat-btn,
     .btn-book-consultant,
     .btn-glowy {
-        font-size: 13px !important; /* Ukuran teks lebih kecil */
-        padding: 10px 15px !important; /* Padding lebih ramping */
-        gap: 6px !important; /* Jarak antara icon dan teks dipersempit */
-        letter-spacing: 0.5px !important; /* Spasi antar huruf agar tidak rapat */
+        font-size: 13px !important;
+        /* Ukuran teks lebih kecil */
+        padding: 10px 15px !important;
+        /* Padding lebih ramping */
+        gap: 6px !important;
+        /* Jarak antara icon dan teks dipersempit */
+        letter-spacing: 0.5px !important;
+        /* Spasi antar huruf agar tidak rapat */
     }
 
     /* Memastikan icon di dalam button ikut mengecil */
